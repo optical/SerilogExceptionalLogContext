@@ -8,12 +8,13 @@
   <PropertyGroup Label="Package">
     <Authors>Jared Klopper</Authors>
     <Product>Serlog.ExceptionalLogContext</Product>
-    <Description>Enriches exceptions logged via Serilog with their LogContext at the time they were raised</Description>
+    <Description>Enriches exceptions logged via Serilog with their LogContext at the time they were raised. Check out the readme in the repository for an example</Description>
     <PackageProjectUrl>https://github.com/optical/SerilogExceptionalLogContext</PackageProjectUrl>
     <RepositoryUrl>https://github.com/optical/SerilogExceptionalLogContext</RepositoryUrl>
+    <PackageIconUrl>https://serilog.net/images/serilog-enricher-nuget.png</PackageIconUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>serilog;serilog enricher;serilog exception;</PackageTags>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Copyright>Jared Klopper</Copyright>
   </PropertyGroup>
 
