@@ -1,4 +1,6 @@
 # Serilog.ExceptionalLogContext
+![Compile](https://github.com/optical/SerilogExceptionalLogContext/workflows/.NET%20Core%20Compile/badge.svg)
+
 An enricher for Serilog which will enhance your exceptions logged with their LogContext at the time they were thrown. If you use LogContext to enrich your logs with additional ambient details, but are frustrated that your low level exception logs lack this context, this enricher is for you.
 
 This solves the issue described in [serilog/#984](https://github.com/serilog/serilog/issues/895). There is no need to use an exception filter and it also works for async/await too, all without changing any of your existing exception handling code

@@ -1,9 +1,11 @@
-name: .NET Core Compile
+name: .NET Core Publish
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ master ]
 
 jobs:
-  build:
+  publish:
 
     runs-on: ubuntu-latest
 
@@ -19,3 +21,9 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: publish on version change
+      id: publish_nuget
+      uses: rohith/publish-nuget@v2
+      with:
+        # Filepath of the project to be packaged, relative to root of repository
+        PROJECT_FILE_PATH: Serilog.ExceptionalLogContext/Serilog.ExceptionalLogContext.csproj
