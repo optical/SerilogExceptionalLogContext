@@ -24,7 +24,9 @@ It's as simple as adding `.Enrich.WithExceptionalLogContext()` and you're done!
 
 ```
 var logger = new LoggerConfiguration()
+	.Enrich.FromLogContext()
 	.Enrich.WithExceptionalLogContext()
+	// Write to a sink, add more enrichers, etc
 	.CreateLogger();
 ```
 
