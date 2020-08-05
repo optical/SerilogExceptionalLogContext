@@ -83,7 +83,7 @@ namespace Serilog.ExceptionalLogContext.Tests {
 			var firstEventPropertyValue = (ScalarValue)firstEvent.Properties[exceptionKey];
 			Assert.That(firstEventPropertyValue.Value, Is.EqualTo("Value"));
 
-			var secondEvent = _logEventSink.Events[0];
+			var secondEvent = _logEventSink.Events[1];
 			Assert.That(secondEvent.Properties, Contains.Key(exceptionKey));
 			var secondEventPropertyValue = (ScalarValue)secondEvent.Properties[exceptionKey];
 			Assert.That(secondEventPropertyValue.Value, Is.EqualTo("Value"));
