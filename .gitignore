@@ -1,0 +1,5 @@
+Serilog.ExceptionalLogContext.Tests/bin/
+Serilog.ExceptionalLogContext.Tests/obj/
+Serilog.ExceptionalLogContext/obj/
+Serilog.ExceptionalLogContext/bin/
+.vs/

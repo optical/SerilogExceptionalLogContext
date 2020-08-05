@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <Authors>Jared Klopper</Authors>
+    <Product>Serlog.ExceptionalLogContext</Product>
+    <Description>Enriches exceptions logged via Serilog with their LogContext at the time they were raised</Description>
+    <PackageProjectUrl>https://github.com/optical/SerilogExceptionalLogContext</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/optical/SerilogExceptionalLogContext</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>serilog;serilog enricher;serilog exception;</PackageTags>
+    <Version>1.0.0</Version>
+    <Copyright>Jared Klopper</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
