@@ -16,11 +16,14 @@ namespace Serilog.ExceptionalLogContext {
 
 		private void CurrentDomain_FirstChanceException(object sender, FirstChanceExceptionEventArgs exceptionEvent) {
 			try {
-				var context = LogContext.Clone();
-				// Call Add, not AddOrUpdate. If an exception is logged twice, the context from the original callsite will be preserved.
-				// This is desireable as subsequent throws/logs of the exception will unwind the stack, removing the context we're trying to preserve
-				// Note: this can throw, which absoutely necessitates the try/catch
-				_exceptionToContextLookup.Add(exceptionEvent.Exception, context);
+				if (!_exceptionToContextLookup.TryGetValue(exceptionEvent.Exception, out var _))
+				{
+					var context = LogContext.Clone();
+					// Call Add, not AddOrUpdate. If an exception is logged twice, the context from the original callsite will be preserved.
+					// This is desireable as subsequent throws/logs of the exception will unwind the stack, removing the context we're trying to preserve
+					// Note: this can throw, which absoutely necessitates the try/catch
+					_exceptionToContextLookup.Add(exceptionEvent.Exception, context);
+				}
 			} catch {
 				// Any exceptions raised in here cannot be propagated, or the whole application will be taken down
 			}
