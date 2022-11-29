@@ -1,5 +1,5 @@
 # Serilog.ExceptionalLogContext
-![Compile](https://github.com/optical/SerilogExceptionalLogContext/workflows/.NET%20Core%20Compile/badge.svg)
+[![Nuget](https://img.shields.io/nuget/v/Serilog.ExceptionalLogContext.svg)](https://nuget.org/packages/Serilog.ExceptionalLogContext) ![Compile](https://github.com/optical/SerilogExceptionalLogContext/workflows/.NET%20Core%20Compile/badge.svg)
 
 An enricher for Serilog which will enhance your exceptions logged with their LogContext at the time they were thrown. If you use LogContext to enrich your logs with additional ambient details, but are frustrated that your low level exception logs lack this context, this enricher is for you.
 
@@ -24,9 +24,11 @@ It's as simple as adding `.Enrich.WithExceptionalLogContext()` and you're done!
 
 ```
 var logger = new LoggerConfiguration()
+	.Enrich.FromLogContext()
 	.Enrich.WithExceptionalLogContext()
+	// Write to a sink, add more enrichers, etc
 	.CreateLogger();
 ```
 
 ## Acquistion
-Download from Nuget
+Download from [Nuget](https://nuget.org/packages/Serilog.ExceptionalLogContext)
